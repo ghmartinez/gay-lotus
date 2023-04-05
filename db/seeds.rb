@@ -4,6 +4,7 @@ puts 'Cleaning database...'
 Bungalow.destroy_all
 User.destroy_all
 Challenge.destroy_all
+ChallengeUser.destroy_all
 puts 'Finished!'
 
 puts 'Creating 12 bungalows...'
@@ -39,3 +40,12 @@ puts 'Creating 120 challenges...'
   challenge.save!
 end
 puts 'Finished!'
+
+puts 'Creating 120 challenge_users...'
+120.times do
+  challenge_user = ChallengeUser.new(
+    user: User.all.sample,
+    challenge: Challenge.all.sample
+  )
+  challenge_user.save!
+end

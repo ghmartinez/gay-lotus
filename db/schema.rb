@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_03_155544) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_05_155255) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,16 +21,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_03_155544) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "challenge_users", force: :cascade do |t|
+    t.bigint "challenge_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_challenge_users_on_challenge_id"
+    t.index ["user_id"], name: "index_challenge_users_on_user_id"
+  end
+
   create_table "challenges", force: :cascade do |t|
     t.text "description"
     t.string "status", default: "pending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "challenges_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "challenge_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,5 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_03_155544) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "challenge_users", "challenges"
+  add_foreign_key "challenge_users", "users"
   add_foreign_key "users", "bungalows"
 end
