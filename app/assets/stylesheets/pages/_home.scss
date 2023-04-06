@@ -1,10 +1,56 @@
+.x-padding {
+  width: 90%;
+  margin: auto
+}
+
+.text-align {
+  text-align: center;
+}
+
+.clock {
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 10em;
+  outline: 1px solid black;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  display: flex;
+  flex-direction: column;
+}
+
+div.clock p:first-of-type {
+  font-size: 1.8em;
+  margin-bottom: -10px;
+  margin-top: 4px;
+}
+
+@media (min-width: 400px) {
+  video {
+    width: 50%;
+    min-width: 500px;
+    display: flex;
+    margin: auto;
+  }
+}
+
+h1 {
+  font-size: 3em;
+}
+
+
+
+
+
+
 // Specific CSS for your home-page
 
 .home-bg {
   font-family: $body-font;
-  color: white;
-  background: image-url("bg.jpg") top center no-repeat;
-  background-size: cover;
+  // color: white;
+/*   background: image-url("bg.jpg") top center no-repeat;
+ */  background-size: cover;
+  background-color: pink;
   position: relative;
 }
 
@@ -74,68 +120,68 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  position: relative;
-  width: 100%;
-  padding: 100px 0;
-  /* countdown */
+/*   position: relative;
+ */  width: 100%;
+/*   padding: 100px 0;
+ */  /* countdown */
 }
 
 #header h1 {
-  margin: 0 0 10px 0;
+/*   margin: 0 0 10px 0;
   font-size: 60px;
   font-weight: 700;
   line-height: 56px;
   color: white;
-  font-style: italic;
+  font-style: italic; */
 }
 
 #header h2 {
-  color: white;
+/*   color: white;
   margin-bottom: 40px;
-  font-size: 22px;
+  font-size: 22px; */
 }
 
 #header .countdown {
-  margin-bottom: 80px;
-}
+/*   margin-bottom: 80px;
+ */}
 
 #header .countdown div {
   text-align: center;
-  margin: 10px;
+/*   margin: 10px;
   width: 100px;
-  padding: 15px 0;
-  background: rgba(255, 255, 255, 0.12);
-  border-top: 5px solid #F40D8C;
+  padding: 15px 0; */
+/*   background: rgb(143, 143, 143);
+ */  /* border-top: 5px solid #F40D8C;
   border-right: 5px solid #F4C200;
-  border-left: 5px solid #2A167F;
+  border-left: 5px solid #2A167F; */
 }
 
 #header .countdown div h3 {
-  font-weight: 700;
+/*   font-weight: 700;
   font-size: 44px;
-  margin-bottom: 15px;
+  margin-bottom: 15px; */
 }
 
 #header .countdown div h4 {
-  font-size: 16px;
-  font-weight: 600;
+/*   font-size: 16px;
+  font-weight: 600; */
 }
 
 @media (max-width: 575px) {
   #header .countdown div {
-    width: 70px;
+ /*    width: 70px;
     padding: 10px 0;
-    margin: 10px 8px;
+    margin: 10px 8px; */
   }
 
   #header .countdown div h3 {
-    font-size: 28px;
-    margin-bottom: 10px;
+ /*    font-size: 28px;
+    margin-bottom: 10px; */
   }
 
   #header .countdown div h4 {
-    font-size: 14px;
-    font-weight: 500;
+/*     font-size: 14px;
+    font-weight: 500; */
   }
 }
 
@@ -153,67 +199,67 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
-}
+/*   padding: 60px 0;
+ */}
 
 .section-bg {
-  background-color: #fff5f5;
-}
+/*   background-color: #fff5f5;
+ */}
 
 .section-title {
-  text-align: center;
-  padding-bottom: 15px;
+/*   text-align: center;
+  padding-bottom: 15px; */
 }
 
 .section-title h2 {
-  font-size: 32px;
+/*   font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
-  position: relative;
+  position: relative; */
 }
 
 .section-title p {
-  margin-bottom: 0;
-}
+/*   margin-bottom: 0;
+ */}
 
 /*--------------------------------------------------------------
 # Contact Us
 --------------------------------------------------------------*/
 .about .content h2 {
-  font-weight: 700;
+/*   font-weight: 700;
   font-size: 48px;
   line-height: 60px;
   margin-bottom: 20px;
-  text-transform: uppercase;
+  text-transform: uppercase; */
 }
 
 .about .content h3 {
-  font-weight: 500;
+/*   font-weight: 500;
   line-height: 32px;
-  font-size: 24px;
+  font-size: 24px; */
 }
 
 .about .content ul {
-  list-style: none;
-  padding: 0;
+/*   list-style: none;
+  padding: 0; */
 }
 
 .about .content ul li {
-  padding: 10px 0 0 28px;
-  position: relative;
+/*   padding: 10px 0 0 28px;
+  position: relative; */
 }
 
 .about .content ul i {
-  left: 0;
+  /* left: 0;
   top: 12px;
   position: absolute;
   font-size: 20px;
-  color: #F4C200;
+  color: #F4C200; */
 }
 
 .about .content p:last-child {
-  margin-bottom: 0;
-}
+/*   margin-bottom: 0;
+ */}
 
 /*--------------------------------------------------------------
 # Footer
@@ -242,9 +288,9 @@ section {
 }
 
 video {
-  max-width: 100%;
+/*   max-width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 10px; */
 }
 
 @media (max-width: 768px) {
