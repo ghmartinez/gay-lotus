@@ -3,9 +3,9 @@ class ChallengesController < ApplicationController
     @challenges = current_user.challenges
   end
 
-  # def show
-  #   @challenge = Challenge.find(params[:id])
-  # end
+  def show
+    @challenge = Challenge.find(params[:id])
+  end
 
   # def new
   #   @challenge = Challenge.new

@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :challenges, only: :index
+  resources :missions, only: [:index, :show]
 end
