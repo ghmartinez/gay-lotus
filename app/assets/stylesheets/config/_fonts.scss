@@ -6,13 +6,16 @@ $body-font: "Lato", "Helvetica", "sans-serif";
 $headers-font: "Playfair Display", "Helvetica", "serif";
 
 
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 
-.fancy-voice {
-  font-family: "Times New Roman", Times, serif;
+.fancy-font {
+  font-family: 'Tangerine', cursive;
 
 }
 
-.intimidating-voice {
-  font-family: Arial, Helvetica, sans-serif;
 
+
+.centered-text {
+  text-align: center;
+  margin: auto;
 }
