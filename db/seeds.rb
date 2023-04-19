@@ -4,7 +4,7 @@ puts 'Cleaning database...'
 Bungalow.destroy_all
 User.destroy_all
 Challenge.destroy_all
-ChallengeUser.destroy_all
+Mission.destroy_all
 puts 'Finished!'
 
 puts 'Creating 12 bungalows...'
@@ -35,17 +35,20 @@ puts 'Creating 120 challenges...'
 120.times do
   challenge = Challenge.new(
     description: Faker::Lorem.paragraph,
-    status: ['pending', 'won', 'lost'].sample
   )
   challenge.save!
 end
 puts 'Finished!'
 
-puts 'Creating 120 challenge_users...'
-120.times do
-  challenge_user = ChallengeUser.new(
-    user: User.all.sample,
-    challenge: Challenge.all.sample
+puts 'Creating 120 missions...'
+75.times do
+  mission = Mission.new(
+    challenge: Challenge.all.sample,
+    player_user: User.all.sample,
+    target_user: User.all.sample,
+    winner_user: User.all.sample,
+    status: ['pending', 'completed'].sample
   )
-  challenge_user.save!
+  mission.save!
 end
+puts 'Finished!'
