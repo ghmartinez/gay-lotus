@@ -3,7 +3,7 @@ class MissionsController < ApplicationController
     @missions = current_user.missions
   end
 
-  def show
-    @missions = Mission.find(params[:id])
-  end
+  # def show
+  #   @missions = Mission.find(params[:id])
+  # end
 end
