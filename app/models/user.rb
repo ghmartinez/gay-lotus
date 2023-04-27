@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :challenge_users, dependent: :destroy
-  has_many :challenges, through: :challenge_users
+  has_many :missions, dependent: :destroy
   belongs_to :bungalow
 end

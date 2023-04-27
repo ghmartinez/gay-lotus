@@ -1,3 +1,51 @@
+<style>
+  .hot-title {
+    color: hotPink;
+  text-shadow: 1px 1px black;
+  line-height: 0.6em
+  }
+
+  h2 {
+    font-size: 4em;
+    margin-bottom: 0px;
+    margin-top: 1em;
+  }
+
+</style>
+
+<style>
+  td {
+    border: 1px solid hotpink;
+    padding: 0.5em;
+  }
+</style>
+
+<style>
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  padding: 3em 0em
+}
+section > * {
+  padding: 0em 2em;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  section {
+    grid-template-columns: 1fr ;
+  }
+}
+
+</style>
+
+<style>
+a {
+  color: hotpink
+}
+</style>
+
 <div class="home-bg">
 
   <!-- Música de fondo -->
@@ -9,108 +57,91 @@
   </audio>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex flex-column align-items-center">
+  <header id="header">
+    <div>
+      <h1 style="font-size: 4em; margin: 1em 0px 0px 0px; text-align: center; line-height: 0.9em;">CAMPING GAY LOTUS</h1>
+      <h2 class="fancy-font hot-title" style="font-size: 4em; margin: 0px; text-align: center;   line-height: 0.4em;">Hola mariconas</h2>
 
-      <h1>CAMPING</h1>
-      <h1>🪷 G A Y 🪷</h1>
-      <h1>LOTUS</h1>
-
-      <h2>Esteu preparades per sobreviure al nostre càmping? 😱🔫</h2>
-      <p>Comença el compte enrere... tic... toc... ⏳</p>
+      <p class="centered-text" style="margin-top: 2em" >
+      Comença el compte enrere... tic... toc...</p>
+      <br>
       <div class="countdown d-flex justify-content-center" data-count="2023/05/19">
+
+      <img src="https://64.media.tumblr.com/9e39c944f4f177510b5366d08263c7d1/tumblr_nfvwf32DPI1qcwgxao1_500.gif" style="height: 7em"alt="">
         <div>
-          <h3>%d</h3>
-          <h4>Dies</h4>
+          <p class="countdown-item">%d</p>
+          <p style = "text-align: center">Dies</p>
         </div>
         <div>
-          <h3>%h</h3>
-          <h4>Hores</h4>
+          <p class="countdown-item">%h</p>
+          <p style = "text-align: center">Hores</p>
         </div>
         <div>
-          <h3>%m</h3>
-          <h4>Minuts</h4>
+          <p class="countdown-item">%m</p>
+          <p style = "text-align: center">Minuts</p>
         </div>
         <div>
-          <h3>%s</h3>
-          <h4>Segons</h4>
+          <p class="countdown-item">%s</p>
+          <p style = "text-align: center">Segons</p>
         </div>
+      <img src="https://64.media.tumblr.com/9e39c944f4f177510b5366d08263c7d1/tumblr_nfvwf32DPI1qcwgxao1_500.gif" style="height: 7em"alt="">
+
       </div>
 
-      <h2>Permeteu-nos que us allotgem al més luxós (o luxuriós... 😏) càmping dels nostres Gay Lotus espais.</h2>
-      <video width="100%" height="auto" controls>
+      <p class="centered-text">Permeteu-nos que us allotgem al camping més luxós (o luxuriós... 😏). Esteu preparades per sobreviure al nostre càmping? 😱</p>
+     <div class="centered-text">
+      <video style="max-width: 1000px" width="100%" height="auto" controls>
         <source src="assets/img/promo.mp4" type="video/mp4">
         El vostre navegador no admet l'etiqueta de vídeo.
       </video>
-
+      </div>
     </div>
   </header><!-- End #header -->
 
   <main id="main">
-
     <!-- ======= About Us Section ======= -->
-    <section id="about" class="about" style="background-color: rgba(0, 0, 0, 0.5);">
-      <div class="container">
+    <section>
+      <div class="paragraph">
+        <h2 class="fancy-font hot-title centered-text">Estimades hostes,</h2>
+        <p>És un honor i un privilegi per a nosaltres donar-vos la benvinguda al nostre càmping de luxe. Com a part
+          del nostre compromís de brindar experiències excepcionals i d'alta qualitat, us hem seleccionat a
+          vosaltres com els nostres hostes més selectes per gaudir d'un cap de setmana espectacular.
+        Esperem que la vostra estada amb nosaltres sigui única i memorable. El nostre equip està compromès a
+          garantir-ne la satisfacció en tot moment.
+        Durant la seva estada, podran gaudir de les millors instal·lacions i serveis que oferim, des dels
+          nostres luxosos bungalous, fins a les nostres exquisites activitats (aviat tindreu disponible el
+          programa). Tot això envoltat d´un entorn natural impressionant i una atmosfera relaxada, segura i
+          inclusiva.
+        Ens enorgulleix haver estat escollides com a destinació de càmping de luxe i esperem que la seva estada
+          amb nosaltres sigui una experiència inoblidable.
+        Atentament, <br>
+        <span style="text-decoration: hotpink wavy underline">L'equip del Camping Gay Lotus</span></p>
+      </div>
 
-        <h3>🤗 Benvingudes</h3>
-
-        <div class="row content">
-          <div class="col-lg-6">
-            <h2>Estimades hostes,</h2>
-            <h5>És un honor i un privilegi per a nosaltres donar-vos la benvinguda al nostre càmping de luxe. Com a part
-              del nostre compromís de brindar experiències excepcionals i d'alta qualitat, us hem seleccionat a
-              vosaltres com els nostres hostes més selectes per gaudir d'un cap de setmana espectacular.</h5>
-            <h5>Esperem que la vostra estada amb nosaltres sigui única i memorable. El nostre equip està compromès a
-              garantir-ne la satisfacció en tot moment.</h5>
-            <h5>Durant la seva estada, podran gaudir de les millors instal·lacions i serveis que oferim, des dels
-              nostres luxosos bungalous, fins a les nostres exquisites activitats (aviat tindreu disponible el
-              programa). Tot això envoltat d´un entorn natural impressionant i una atmosfera relaxada, segura i
-              inclusiva.</h5>
-            <h5>Ens enorgulleix haver estat escollides com a destinació de càmping de luxe i esperem que la seva estada
-              amb nosaltres sigui una experiència inoblidable.</h5>
-            <h5>Atentament,</h5>
-            <h5>L'equip del Camping Gay Lotus. 🪷</h5>
-            <hr>
-          </div>
-
-
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <h2>These gays are trying to murder me</h2>
-            <p style="font-style: italic">Tenim un problema:</p>
-            <h5>La nostra respectada directora del càmping, Valentina, ens ha informat que totes les nostres hostes són
-              una mica... soltes.</h5>
-            <h5>Pretenen ser amables i properes, però no ho fan pel plaer de construir una comunitat... sinó pels
-              "papers".</h5>
-            <h5>Des de l'equip de direcció del Camping Gay Lotus 🪷 no volem donar gaires més detalls (de moment...),
-              però compte amb qui compartiu informació o us deixeu portar... Podeu perdre la vostra fortuna i deixar-la
-              en mans d'una altre persona.</h5>
-            <h5>Esperem que no sigui un inconvenient molt gran per a la vostra estada.</h5>
-            <h5>Us mantindrem informats de les novetats.</h5>
-            <h5>Gràcies per entendre-ho,</h5>
-            <h5>L'equip del Camping Gay Lotus. 🪷</h5>
-            <hr>
-          </div>
-        </div>
-
+      <div class="paragraph">
+        <h2 class="fancy-font hot-title centered-text">These gays are trying to murder me!!!</h2>
+        <p style="font-style: italic">
+          Tenim un problema:
+          La nostra respectada directora del càmping, Valentina, ens ha informat que totes les nostres hostes són una mica... soltes. Pretenen ser amables i properes, però no ho fan pel plaer de construir una comunitat... sinó pels "papers". Des de l'equip de direcció del Camping Gay Lotus 🪷 no volem donar gaires més detalls (de moment...), però compte amb qui compartiu informació o us deixeu portar... Podeu perdre la vostra fortuna i deixar-la en mans d'una altre persona. Esperem que no sigui un inconvenient molt gran per a la vostra estada. Us mantindrem informats de les novetats.
+          Gràcies per entendre-ho,
+          L'equip del Camping Gay Lotus. 🪷
+        </p>
       </div>
     </section><!-- End About Us Section -->
 
-    <!-- ======= Habitaciones Section ======= -->
-    <section id="about" class="about" style="background-color: rgba(255, 255, 255, 0.5); color: black;">
-      <div class="container">
 
-        <h2>⛺ Bungalous</h2>
+<hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
+<br>
+  <!-- ======= Habitaciones Section ======= -->
+  <section>
+        <div class="paragraph">
+          <h2  class="fancy-font hot-title centered-text">Els Nostres Bungalous,</h2>
+          <%# <img src="assets/img/tent.png" alt="tienda de campaña" style="max-width: 100%; height: auto;" class="mb-4"> %>
+            <p>Para facilitaros vuestra estancia os damos a elegir el bungaló y la habitación en la que os queráis hospedar. Simplemente tenéis que rellenar vuestro nombre y usuario de telegram en el bungaló y habitación de preferencia:</p>
 
-        <div class="row content">
-          <div class="col-lg-6">
-            <h2>Els Nostres Bungalous,</h2>
-            <img src="assets/img/tent.png" alt="tienda de campaña" style="max-width: 100%; height: auto;" class="mb-4">
-            <h5>Para facilitaros vuestra estancia os damos a elegir el bungaló y la habitación en la que os queráis
-              hospedar.</h5>
-            <h5>Simplemente tenéis que rellenar vuestro nombre y usuario de telegram en el bungaló y habitación de
-              preferencia:</h5>
 
-            <table class="mt-4">
+
+            <table class="" style="width: fit-content; margin: auto; ">
               <thead>
                 <tr>
                   <th colspan="3">Las Monitoras</th>
@@ -152,16 +183,18 @@
 
           </div>
 
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <h2>Però tenim un problema,</h2>
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRLkSjRRl76Bh38yadmdeo94YiPoF6bj2f9MxC3eyEJxZAQIV9M3IxG5mdVlWoP_zKuNx5BTSQhsBds/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-            <h5>La nostra respectada directora del càmping, Valentina, ens ha informat que totes les nostres hostes són
-              una mica... soltes.</h5>
-            <h5>Pretenen ser amables i properes, però no ho fan pel plaer de construir una comunitat... sinó pels
-              "papers"...</h5>
-            <h5>Des de la direcció del Camping Gay Lotus 🪷 no volem donar gaires més detalls (de moment...), però ves
+          <div class="paragraph">
+            <h2 class="fancy-font hot-title centered-text">Però tenim un problema,</h2>
+            <div class="centered-text">
+            <iframe style="" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRLkSjRRl76Bh38yadmdeo94YiPoF6bj2f9MxC3eyEJxZAQIV9M3IxG5mdVlWoP_zKuNx5BTSQhsBds/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+            </div>
+            <p>La nostra respectada directora del càmping, Valentina, ens ha informat que totes les nostres hostes són
+              una mica... soltes.
+              Pretenen ser amables i properes, però no ho fan pel plaer de construir una comunitat... sinó pels
+              "papers"...
+              Des de la direcció del Camping Gay Lotus 🪷 no volem donar gaires més detalls (de moment...), però ves
               amb compte amb qui compartiu informació o us deixeu portar... Podeu perdre la vostra fortuna i deixar-la
-              en mans d'una fúrcia. 😱😱😱</h5>
+              en mans d'una fúrcia. 😱😱😱</p>
           </div>
         </div>
 
@@ -171,15 +204,9 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
+  <footer id="footer" style="background-color: white">
         &copy; Copyright <strong><span>Camping Gay Lotus</span></strong>. Tots els drets reservats
-      </div>
-      <div class="credits">
         Dissenyat amb ❤️ per <a href="https://gabrielmr.com/">Gabriel</a> i <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
   </footer><!-- End #footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
