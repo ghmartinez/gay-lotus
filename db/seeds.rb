@@ -44,7 +44,7 @@ puts 'Creating 120 missions...'
 75.times do
   mission = Mission.new(
     challenge: Challenge.all.sample,
-    player_user: User.all.sample,
+    user: User.all.sample,
     target_user: User.all.sample,
     winner_user: User.all.sample,
     status: ['pending', 'completed'].sample
