@@ -5,6 +5,9 @@ class PagesController < ApplicationController
   end
 
   def scan
+    # if current_user.qr.empty?
+    #   current_user.update(qr: params[:qr])
+    # else
 
     # aquí tengo que implantar la logica de actualizar el qr_code de los users
     # if current_user.qr_code.empty?
@@ -17,6 +20,5 @@ class PagesController < ApplicationController
     # 2. guardar el codigo de la url en la columna qr del usuario
 
     # si el usuario tiene codigo asignado
-
   end
 end
