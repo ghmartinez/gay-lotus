@@ -1,1 +1,12 @@
 <p>hola</p>
+
+<p>Hola <%= current_user.first_name %> <%= current_user.last_name %>!</p>
+<p>Tu misión es <%= current_user.missions.last.challenge.description %> y tiene que ser hacia <%= current_user.missions.last.target_user.first_name %>!</p>
+
+<p>Misiones pasadas:</p>
+<% current_user.missions.each do |mission| %>
+  <p><%= mission.challenge.description %> hacia <%= mission.target_user.first_name %></p>
+  <p><%= mission.status %></p>
+<% end %>
+
+<h1><%= @amor %></h1>

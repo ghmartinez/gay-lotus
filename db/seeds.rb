@@ -17,8 +17,8 @@ puts 'Creating 12 bungalows...'
 end
 puts 'Finished!'
 
-puts 'Creating 75 gays...'
-75.times do
+puts 'Creating 10 gays...'
+10.times do
   user = User.new(
     email: Faker::Internet.email,
     password: '123456',
@@ -31,24 +31,47 @@ puts 'Creating 75 gays...'
 end
 puts 'Finished!'
 
-puts 'Creating 120 challenges...'
-120.times do
+puts 'Creating 15 challenges...'
+15.times do
   challenge = Challenge.new(
-    description: Faker::Lorem.paragraph,
+    description: Faker::Lorem.paragraph
   )
   challenge.save!
 end
 puts 'Finished!'
 
-puts 'Creating 120 missions...'
-75.times do
-  mission = Mission.new(
-    challenge: Challenge.all.sample,
-    user: User.all.sample,
-    target_user: User.all.sample,
-    winner_user: User.all.sample,
-    status: ['pending', 'completed'].sample
-  )
-  mission.save!
-end
+puts 'Creating missions...'
+
+mission_one = Mission.new(
+  challenge: Challenge.all.first,
+  user: User.all.first,
+  target_user: User.all.second,
+  status: 'pending'
+)
+mission_one.save!
+
+mission_two = Mission.new(
+  challenge: Challenge.all.second,
+  user: User.all.second,
+  target_user: User.all.third,
+  status: 'pending'
+)
+mission_two.save!
+
+mission_three = Mission.new(
+  challenge: Challenge.all.third,
+  user: User.all.third,
+  target_user: User.all.fourth,
+  status: 'pending'
+)
+mission_three.save!
+
+mission_four = Mission.new(
+  challenge: Challenge.all.fourth,
+  user: User.all.fourth,
+  target_user: User.all.first,
+  status: 'pending'
+)
+mission_four.save!
+
 puts 'Finished!'
