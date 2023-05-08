@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_11_163202) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_04_174257) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,13 +31,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_163202) do
     t.bigint "challenge_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "player_user_id"
     t.bigint "target_user_id"
     t.bigint "winner_user_id"
     t.string "status"
+    t.bigint "user_id", null: false
     t.index ["challenge_id"], name: "index_missions_on_challenge_id"
-    t.index ["player_user_id"], name: "index_missions_on_player_user_id"
     t.index ["target_user_id"], name: "index_missions_on_target_user_id"
+    t.index ["user_id"], name: "index_missions_on_user_id"
     t.index ["winner_user_id"], name: "index_missions_on_winner_user_id"
   end
 
@@ -53,13 +53,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_163202) do
     t.string "last_name"
     t.string "telegram_user"
     t.bigint "bungalow_id"
+    t.string "qr"
     t.index ["bungalow_id"], name: "index_users_on_bungalow_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "missions", "challenges"
-  add_foreign_key "missions", "users", column: "player_user_id"
+  add_foreign_key "missions", "users"
   add_foreign_key "missions", "users", column: "target_user_id"
   add_foreign_key "missions", "users", column: "winner_user_id"
   add_foreign_key "users", "bungalows"

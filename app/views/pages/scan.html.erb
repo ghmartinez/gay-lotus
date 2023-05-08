@@ -1,0 +1,25 @@
+<div class="container">
+
+  <div class="alert alert-primary" role="alert">
+    <%= @mensaje %>
+    <p>regargar</p>
+  </div>
+
+  <h1>Tus misiones gays</h1>
+
+  <h3>Hola <strong><%= current_user.first_name %> <%= current_user.last_name %></strong>!</h3>
+  <p>Tu misión actual es <%= current_user.missions.last.challenge.description %> y tiene que ser hacia <%= current_user.missions.last.target_user.first_name %>!</p>
+
+  <hr>
+
+  <p>Todas mis misiones (las pasadas):</p>
+
+  <div class="container">
+    <% current_user.missions.each_with_index do |mission, index| %>
+      <p><%= index + 1 %>. <i><%= mission.challenge.description %></i> hacia <strong><%= mission.target_user.first_name %></strong></p>
+      <p>Estado: <strong><%= mission.status %></strong></p>
+      <hr>
+    <% end %>
+  </div>
+
+</div>

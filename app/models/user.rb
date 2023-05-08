@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :missions, dependent: :destroy
-  belongs_to :bungalow
+  belongs_to :bungalow, optional: true
 end
