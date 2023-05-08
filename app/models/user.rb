@@ -6,4 +6,9 @@ class User < ApplicationRecord
 
   has_many :missions, dependent: :destroy
   belongs_to :bungalow, optional: true
+  after_create :create_user_mission
+
+  def create_user_mission
+    Mission.create(user: self, challenge: Challenge.random, status: "pending", target_user: User.where.not(id: self.id).sample)
+  end
 end
