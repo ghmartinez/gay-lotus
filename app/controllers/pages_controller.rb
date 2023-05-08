@@ -8,15 +8,15 @@ class PagesController < ApplicationController
     if current_user.qr.nil?
       current_user.update(qr: params[:qr])
 
+    elsif current_user.qr == params[:qr]
+      @mensaje = "Ya has registrado tu propio qr, tonta."
+
     elsif current_user.qr != params[:qr] && params[:qr].present?
 
       @user = User.find_by(qr: params[:qr])
 
       if @user.nil?
         @mensaje = "El qr que has escaneado no está asociado a ningún usuario."
-
-      elsif current_user.qr == params[:qr]
-        @mensaje = "Ya has registrado tu propio qr, tonta."
 
       elsif current_user.missions.any? { |mission| mission.target_user.qr == params[:qr] && mission.status == "completed" }
         @mensaje = "Ya has escaneado este qr de esta mision, tonta."
@@ -26,7 +26,7 @@ class PagesController < ApplicationController
         @mission = Mission.find_by(user: @user)
         @new_mission = @mission.dup
         @new_mission.update(user: current_user)
-        @mensaje = "Has completado la misión, tonta."
+        @mensaje = "Has completado la misión, tonta. Recarga la página para que veas tu nueva misión."
       end
     end
   end
