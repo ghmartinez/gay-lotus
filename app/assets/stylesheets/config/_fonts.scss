@@ -1,19 +1,14 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 
 // Define fonts for body and headers
 $body-font: "Lato", "Helvetica", "sans-serif";
 $headers-font: "Playfair Display", "Helvetica", "serif";
 
-
-@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
-
 .fancy-font {
   font-family: 'Tangerine', cursive;
-
 }
-
-
 
 .centered-text {
   text-align: center;
