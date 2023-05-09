@@ -54,9 +54,6 @@ gem "devise"
 # Faker gem
 gem 'faker'
 
-# Dotenv gem
-gem "dotenv-rails", groups: [:development, :test]
-
 # Cloudinary gem
 gem "cloudinary"
 
