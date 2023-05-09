@@ -57,6 +57,9 @@ gem 'faker'
 # Dotenv gem
 gem "dotenv-rails", groups: [:development, :test]
 
+# Cloudinary gem
+gem "cloudinary"
+
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"

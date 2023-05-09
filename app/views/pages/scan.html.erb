@@ -37,4 +37,12 @@
     <% end %>
   </div>
 
+  <%= cl_image_tag @current_user.photo.key, height: 300, width: 400, crop: :fill %>
+  <% if @current_user.photo.attached? %>
+    <p>tiene foto</p>
+  <% else %>
+    <p>no tiene foto</p>
+  <% end %>
+  <p>tu nombre es <%= current_user.first_name %> <%= current_user.last_name %></p>
+
 </div>

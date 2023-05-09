@@ -1,10 +1,17 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
+
   def home
   end
 
   def scan
+    # def page_params
+    #   params.require(:current_user).permit(:photo)
+    # end
+
+    # page_params
+
     if current_user.qr.nil?
       current_user.update(qr: params[:qr])
 
