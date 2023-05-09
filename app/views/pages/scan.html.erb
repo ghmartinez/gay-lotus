@@ -1,11 +1,26 @@
 <div class="container">
 
-  <div class="alert alert-primary" role="alert">
-    <%= @mensaje %>
-    <p>regargar</p>
-  </div>
+  <% if current_user.missions.last.status == "completed" && current_user.missions.last.winner_user != current_user %>
+    <div class="alert alert-danger" role="alert">
+      <p>¡Has perdido la misión!</p>
+      <p>¡Pero no te preocupes! ¡Puedes volver a intentarlo!</p>
+    </div>
+  <% end %>
+
+  <% if @mensaje %>
+    <div class="alert alert-primary" role="alert">
+      <%= @mensaje %>
+    </div>
+  <% end %>
 
   <h1>Tus misiones gays</h1>
+
+  <% if @new_mission %>
+    <p>¡Tienes una nueva misión!</p>
+    <%= @new_mission.challenge.description %>
+    <p>hacia</p>
+    <%= @new_mission.target_user.first_name %>
+  <% end %>
 
   <h3>Hola <strong><%= current_user.first_name %> <%= current_user.last_name %></strong>!</h3>
   <p>Tu misión actual es <%= current_user.missions.last.challenge.description %> y tiene que ser hacia <%= current_user.missions.last.target_user.first_name %>!</p>

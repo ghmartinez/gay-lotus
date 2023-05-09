@@ -26,7 +26,7 @@ class PagesController < ApplicationController
         @mission = Mission.find_by(user: @user)
         @new_mission = @mission.dup
         @new_mission.update(user: current_user)
-        @mensaje = "Has completado la misión, tonta. Recarga la página para que veas tu nueva misión."
+        @mensaje = "Has completado la misión, tonta!"
       end
     end
   end
