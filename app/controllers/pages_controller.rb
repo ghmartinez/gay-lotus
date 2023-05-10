@@ -24,6 +24,9 @@ class PagesController < ApplicationController
       elsif current_user.missions.any? { |mission| mission.target_user.qr == params[:qr] && mission.status == "completed" }
         @mensaje = "Ya has escaneado este qr de esta mision, tonta."
 
+      elsif
+        @other_mission.present? && @other_mission.status == "completed"
+        @mensaje = "QUE HAS PERDIDO, DEJA DE ESCANEAr ya porfavor"
       else
         current_user.missions.last.update(status: "completed", winner_user: current_user)
         @mission = Mission.find_by(user: @user)
