@@ -2,6 +2,15 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
+    require 'rufus-scheduler'
+    scheduler = Rufus::Scheduler.new
+
+    # Schedule a block of code to be executed at a specific date and time
+    scheduler.at '2023/05/10 23:39:00' do
+      @amor = "FUNCIONOOOOOO"
+    end
+
+    render :home
   end
 
   def scan
