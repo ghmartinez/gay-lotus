@@ -37,12 +37,18 @@
     <% end %>
   </div>
 
-  <%= cl_image_tag @current_user.photo.key, height: 300, width: 400, crop: :fill %>
-  <% if @current_user.photo.attached? %>
-    <p>tiene foto</p>
-  <% else %>
-    <p>no tiene foto</p>
+  <% if current_user.photo.attached? %>
+    <%= cl_image_tag @current_user.photo.key, height: 300, width: 400, crop: :fill %>
+    <% if @current_user.photo.attached? %>
+      <p>tiene foto</p>
+    <% else %>
+      <p>no tiene foto</p>
+    <% end %>
   <% end %>
+
   <p>tu nombre es <%= current_user.first_name %> <%= current_user.last_name %></p>
 
+  <% if @other_mission.present? and @other_mission.status == "completed" %>
+    <p>¡Has perdido!</p>
+  <% end %>
 </div>

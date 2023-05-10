@@ -5,6 +5,9 @@ class PagesController < ApplicationController
   end
 
   def scan
+    @user_mission = current_user.missions.last
+    @other_mission = Mission.where(challenge: @user_mission.challenge, target_user: @user_mission.target_user).where.not(user: current_user).last
+
     if current_user.qr.nil?
       current_user.update(qr: params[:qr])
 
@@ -26,7 +29,7 @@ class PagesController < ApplicationController
         @mission = Mission.find_by(user: @user)
         @new_mission = @mission.dup
         @new_mission.update(user: current_user)
-        @mensaje = "Has completado la misión, tonta!"
+        @mensaje = "Has completado la misión!"
       end
     end
   end
