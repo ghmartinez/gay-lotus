@@ -1,12 +1,5 @@
 <div class="container">
 
-  <% if current_user.missions.last.status == "completed" && current_user.missions.last.winner_user != current_user %>
-    <div class="alert alert-danger" role="alert">
-      <p>¡Has perdido la misión!</p>
-      <p>¡Pero no te preocupes! ¡Puedes volver a intentarlo!</p>
-    </div>
-  <% end %>
-
   <% if @mensaje %>
     <div class="alert alert-primary" role="alert">
       <%= @mensaje %>
