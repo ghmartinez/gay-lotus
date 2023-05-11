@@ -1,36 +1,4 @@
-require 'faker'
-
-puts 'Cleaning database...'
-Bungalow.destroy_all
-User.destroy_all
-Challenge.destroy_all
-Mission.destroy_all
-puts 'Finished!'
-
-puts 'Creating 12 bungalows...'
-12.times do
-  bungalow = Bungalow.new(
-    name: Faker::Lorem.word,
-    description: Faker::Lorem.paragraph
-  )
-  bungalow.save!
-end
-puts 'Finished!'
-
-puts 'Creating 10 gays...'
-10.times do
-  user = User.new(
-    email: Faker::Internet.email,
-    password: '123456',
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    telegram_user: Faker::Internet.username,
-    bungalow: Bungalow.all.sample
-  )
-  user.save!
-end
-puts 'Finished!'
-
+puts "Creating challenges..."
 challenges = [
   "Conseguir que target se haga una selfie contigo.",
   "Conseguir que target se apunte a algun grupo nuevo de QWERTY.",
@@ -81,44 +49,7 @@ challenges = [
   "Conseguir que target te cuente cuál es su playa favorita de Barcelona."
   ]
 
-puts "Creating challenges..."
 challenges.each do |challenge|
   Challenge.create(description: challenge)
 end
 puts "Challenges created!"
-
-puts 'Creating missions...'
-
-mission_one = Mission.new(
-  challenge: Challenge.all.first,
-  user: User.all.first,
-  target_user: User.all.second,
-  status: 'pending'
-)
-mission_one.save!
-
-mission_two = Mission.new(
-  challenge: Challenge.all.second,
-  user: User.all.second,
-  target_user: User.all.third,
-  status: 'pending'
-)
-mission_two.save!
-
-mission_three = Mission.new(
-  challenge: Challenge.all.third,
-  user: User.all.third,
-  target_user: User.all.fourth,
-  status: 'pending'
-)
-mission_three.save!
-
-mission_four = Mission.new(
-  challenge: Challenge.all.fourth,
-  user: User.all.fourth,
-  target_user: User.all.first,
-  status: 'pending'
-)
-mission_four.save!
-
-puts 'Finished!'

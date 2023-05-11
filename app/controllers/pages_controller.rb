@@ -7,14 +7,19 @@ class PagesController < ApplicationController
   def admin
   end
 
-  def execute_seeds
-    load "#{Rails.root}/db/seeds.rb"
+  def add_missions_to_users
+    User.all.each do |user|
+      target_users = User.all.where.not(id: user.id)
+      target_user = target_users.sample
+      Mission.create(challenge: Challenge.all.sample, user: user, target_user: target_user, status: "pending")
+      target_users.delete(target_user)
+    end
     redirect_to root_path
   end
 
   def scan
     @user_mission = current_user.missions.last
-    @other_mission = Mission.where(challenge: @user_mission.challenge, target_user: @user_mission.target_user).where.not(user: current_user).last
+    @other_mission = Mission.where(challenge: @user_mission.challenge, target_user: @user_mission.target_user).where.not(user: current_user).last if @user_mission
 
     if current_user.qr.nil?
       current_user.update(qr: params[:qr])
