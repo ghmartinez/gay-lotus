@@ -2,15 +2,14 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    require 'rufus-scheduler'
-    scheduler = Rufus::Scheduler.new
+  end
 
-    # Schedule a block of code to be executed at a specific date and time
-    scheduler.at '2023/05/10 23:39:00' do
-      @amor = "FUNCIONOOOOOO"
-    end
+  def admin
+  end
 
-    render :home
+  def execute_seeds
+    load "#{Rails.root}/db/seeds.rb"
+    redirect_to root_path
   end
 
   def scan

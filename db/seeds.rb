@@ -1,5 +1,6 @@
 puts "Cleaning database..."
 Challenge.destroy_all
+User.destroy_all
 
 challenges = [
 "Conseguir que target se haga una selfie contigo.",
@@ -51,15 +52,22 @@ challenges = [
 "Conseguir que target te cuente cuál es su playa favorita de Barcelona."
 ]
 
+puts "Creating challenges..."
 challenges.each do |challenge|
   Challenge.create(description: challenge)
 end
+puts "Challenges created!"
 
-require 'rufus-scheduler'
+puts "Creating Lady gaga and Katy perry..."
+User.create(email: "lady@gaga.com",
+            password: "123456",
+            first_name: "Lady",
+            last_name: "Gaga",
+            telegram_user: "ladygaga")
 
-scheduler = Rufus::Scheduler.new
-
-# Schedule a block of code to be executed at a specific date and time
-scheduler.at '2023/05/10 23:29:00' do
-  puts "Hello, world!"
-end
+User.create(email: "katy@perry.com",
+            password: "123456",
+            first_name: "Katy",
+            last_name: "Perry",
+            telegram_user: "katyperry")
+puts "Lady Gaga and Katy Perry created!"
