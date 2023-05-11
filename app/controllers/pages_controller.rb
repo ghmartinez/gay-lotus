@@ -8,11 +8,12 @@ class PagesController < ApplicationController
   end
 
   def add_missions_to_users
+    target_user = User.all.sample
     User.all.each do |user|
-      target_users = User.all.where.not(id: user.id)
-      target_user = target_users.sample
-      Mission.create(challenge: Challenge.all.sample, user: user, target_user: target_user, status: "pending")
-      target_users.delete(target_user)
+      while Mission.all.any? { |mission| mission.target_user == target_user }
+        target_user = User.where.not(id: user.id).sample
+      end
+      Mission.create(user: user, challenge: Challenge.all.sample, target_user: target_user, status: "pending")
     end
     redirect_to root_path
   end
@@ -23,50 +24,36 @@ class PagesController < ApplicationController
 
     if current_user.qr.nil?
       current_user.update(qr: params[:qr])
+      redirect_to root_path
 
     elsif current_user.qr == params[:qr]
-      @mensaje = "Ya has registrado tu propio qr, tonta."
+      @mensaje = "Ya has registrado tu propio QR, tonta."
 
     elsif current_user.qr != params[:qr] && params[:qr].present?
 
       @user = User.find_by(qr: params[:qr])
 
       if @user.nil?
-        @mensaje = "El qr que has escaneado no está asociado a ningún usuario."
+        @mensaje = "El QR que has escaneado no está asociado a ninguna usuaria, tonta."
 
       elsif current_user.missions.none? { |mission| mission.target_user.qr == params[:qr] }
-        @mensaje = "Esta misión no es tuya, tonta."
+        @mensaje = "Esta misión no te toca, tonta."
 
       elsif current_user.missions.any? { |mission| mission.target_user.qr == params[:qr] && mission.status == "completed" }
-        @mensaje = "Ya has ganado esta mision, tonta."
+        @mensaje = "Ya has ganado esta misión, tonta."
 
-      elsif
-        @other_mission.present? && @other_mission.status == "completed"
-        @mensaje = "QUE HAS PERDIDO, DEJA DE ESCANEAr ya porfavor"
+      elsif @other_mission.present? && @other_mission.status == "completed"
+        @mensaje = "Que has perdido ya. Deja de molestar, tonta."
+
       else
-        # Actualizar mision actual como completada en todas sus copias
         current_user.missions.last.update(status: "completed", winner_user: current_user)
+        @mensaje = "Has completado la misión, reina!"
 
-        #  aqui buscar la mision del otro pavo / o otros pavos y ponersela como ganada (no poner el winner pq pal recuento es mas facil quitarme las que estan nil por defecto)
-
-        @mensaje = "Has completado la misión!"
-
-        # Obtener siguiente mision
-        @mission = Mission.find_by(user: @user) # misión que ahora vas a hacer
-        @target = @mission.target_user # usuario al que tienes que hacer la mision
-
-
+        @mission = Mission.find_by(user: @user)
         @new_mission = @mission.dup
         @new_mission.update(user: current_user)
-        # (Escenario contemplado en Notion) Aquí tengo que encontrar la misión donde target user, sea el mismo, y duplicar la mision para las personas que tengan ese target.
-        #  la mision es @mision
 
-        # @misiones_a_duplicar = Mission.all.where(target_user: @target) # misiones que tienen como target al usuario al que le has hecho la mision
-        # @misiones_a_duplicar.each do |mision|
-        #   user = mision.user
-        #   raise
-        #   user.missions.create(challenge: mision.challenge, target_user: mision.target_user, status: "pending")
-        # end
+        # TODO: Encontrar las misiones con el mismo target user y ponerlas con status completed
       end
     end
   end

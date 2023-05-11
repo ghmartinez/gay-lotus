@@ -1,3 +1,8 @@
+puts "Cleaning database..."
+Challenge.destroy_all
+Mission.destroy_all
+User.destroy_all
+
 puts "Creating challenges..."
 challenges = [
   "Conseguir que target se haga una selfie contigo.",
@@ -53,3 +58,16 @@ challenges.each do |challenge|
   Challenge.create(description: challenge)
 end
 puts "Challenges created!"
+
+puts 'Creating 10 gays...'
+10.times do
+  user = User.new(
+    email: Faker::Internet.email,
+    password: '123456',
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    telegram_user: Faker::Internet.username,
+  )
+  user.save!
+end
+puts 'Finished!'

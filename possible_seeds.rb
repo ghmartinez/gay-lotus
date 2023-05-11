@@ -75,3 +75,9 @@ mission_four = Mission.new(
 mission_four.save!
 
 puts 'Finished!'
+
+# Random users
+User.create(email: "lady@gaga.com", password: "123456", first_name: "Lady", last_name: "Gaga", telegram_user: "ladygaga")
+User.create(email: "katy@perry.com", password: "123456", first_name: "Katy", last_name: "Perry", telegram_user: "katyperry")
+User.create(email: "ariana@grande.com", password: "123456", first_name: "Ariana", last_name: "Grande", telegram_user: "arianagrande")
+User.create(email: "miley@cyrus.com", password: "123456", first_name: "Miley", last_name: "Cyrus", telegram_user: "mileycyrus")
