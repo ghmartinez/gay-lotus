@@ -6,12 +6,12 @@ class User < ApplicationRecord
 
   has_many :missions, dependent: :destroy
   belongs_to :bungalow, optional: true
-  after_create :create_user_mission
+  # after_create :create_user_mission
   has_one_attached :photo
 
-  private
+  # private
 
-  def create_user_mission
-    Mission.create(user: self, challenge: Challenge.all.sample, status: "pending", target_user: User.where.not(id: self.id).sample)
-  end
+  # def create_user_mission
+  #   Mission.create(user: self, challenge: Challenge.all.sample, status: "pending", target_user: User.where.not(id: self.id).sample)
+  # end
 end
