@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :missions, only: :index
 
   get "/scan", to: "pages#scan"
+  get "/admin", to: "pages#admin"
+  post "add_missions_to_users", to: "pages#add_missions_to_users"
 end
