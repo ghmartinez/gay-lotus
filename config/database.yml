@@ -81,7 +81,6 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
-  database: drn7vvc3ibuq6
+  database: gay_lotus_production
   username: gay_lotus
   password: <%= ENV["GAY_LOTUS_DATABASE_PASSWORD"] %>
