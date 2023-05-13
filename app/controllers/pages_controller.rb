@@ -24,7 +24,6 @@ class PagesController < ApplicationController
 
     if current_user.qr.nil?
       current_user.update(qr: params[:qr])
-      redirect_to root_path
 
     elsif current_user.qr == params[:qr]
       @mensaje = "Ya has registrado tu propio QR, tonta."
