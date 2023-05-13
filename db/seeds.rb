@@ -1,3 +1,6 @@
+User.destroy_all
+Mission.destroy_all
+Bungalow.destroy_all
 Challenge.destroy_all
 
 puts "Creating challenges..."
