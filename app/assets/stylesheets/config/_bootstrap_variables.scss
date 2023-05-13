@@ -24,3 +24,11 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+a {
+  text-decoration: none;
+  color: hotpink;
+}
+
+a:hover {
+  color: $qwerty-pink;
+}

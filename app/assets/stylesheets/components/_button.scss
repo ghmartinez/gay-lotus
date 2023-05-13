@@ -1,0 +1,13 @@
+.btn-ghost {
+  color: black;
+  border: 1px solid hotpink;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  border: 1px solid $qwerty-pink;
+}
