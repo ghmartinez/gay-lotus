@@ -1,288 +1,42 @@
-// // Specific CSS for your home-page
-
-// .home-bg {
-//   font-family: $body-font;
-//   color: white;
-//   background: image-url("bg.jpg") top center no-repeat;
-//   background-size: cover;
-//   position: relative;
-// }
-
-// @media (min-width: 1024px) {
-//   body {
-//     background-attachment: fixed;
-//   }
-// }
-
-// a {
-//   color: #F4C200;
-//   text-decoration: none;
-// }
-
-// a:hover {
-//   color: #F4C200;
-//   text-decoration: none;
-// }
-
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-//   font-family: $headers-font;
-// }
-
-// #main {
-//   position: relative;
-// }
-
-// /*--------------------------------------------------------------
-// # Back to top button
-// --------------------------------------------------------------*/
-// .back-to-top {
-//   position: fixed;
-//   visibility: hidden;
-//   opacity: 0;
-//   right: 15px;
-//   bottom: 15px;
-//   z-index: 996;
-//   background: #F4C200;
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 4px;
-//   transition: all 0.4s;
-// }
-
-// .back-to-top i {
-//   font-size: 28px;
-//   color: #fff;
-//   line-height: 0;
-// }
-
-// .back-to-top:hover {
-//   background: #F4C200;
-//   color: #fff;
-// }
-
-// .back-to-top.active {
-//   visibility: visible;
-//   opacity: 1;
-// }
-
-// /*--------------------------------------------------------------
-// # Header
-// --------------------------------------------------------------*/
-// #header {
-//   position: relative;
-//   width: 100%;
-//   padding: 100px 0;
-//   /* countdown */
-// }
-
-// #header h1 {
-//   margin: 0 0 10px 0;
-//   font-size: 60px;
-//   font-weight: 700;
-//   line-height: 56px;
-//   color: white;
-//   font-style: italic;
-// }
-
-// #header h2 {
-//   color: white;
-//   margin-bottom: 40px;
-//   font-size: 22px;
-// }
-
-// #header .countdown {
-//   margin-bottom: 80px;
-// }
-
-// #header .countdown div {
-//   text-align: center;
-//   margin: 10px;
-//   width: 100px;
-//   padding: 15px 0;
-//   background: rgba(255, 255, 255, 0.12);
-//   border-top: 5px solid #F40D8C;
-//   border-right: 5px solid #F4C200;
-//   border-left: 5px solid #2A167F;
-// }
-
-// #header .countdown div h3 {
-//   font-weight: 700;
-//   font-size: 44px;
-//   margin-bottom: 15px;
-// }
-
-// #header .countdown div h4 {
-//   font-size: 16px;
-//   font-weight: 600;
-// }
-
-// @media (max-width: 575px) {
-//   #header .countdown div {
-//     width: 70px;
-//     padding: 10px 0;
-//     margin: 10px 8px;
-//   }
-
-//   #header .countdown div h3 {
-//     font-size: 28px;
-//     margin-bottom: 10px;
-//   }
-
-//   #header .countdown div h4 {
-//     font-size: 14px;
-//     font-weight: 500;
-//   }
-// }
-
-// @keyframes animate-loading-notify {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
-
-// /*--------------------------------------------------------------
-// # Sections General
-// --------------------------------------------------------------*/
-// section {
-//   padding: 60px 0;
-// }
-
-// .section-bg {
-//   background-color: #fff5f5;
-// }
-
-// .section-title {
-//   text-align: center;
-//   padding-bottom: 15px;
-// }
-
-// .section-title h2 {
-//   font-size: 32px;
-//   font-weight: bold;
-//   margin-bottom: 20px;
-//   position: relative;
-// }
-
-// .section-title p {
-//   margin-bottom: 0;
-// }
-
-// /*--------------------------------------------------------------
-// # Contact Us
-// --------------------------------------------------------------*/
-// .about .content h2 {
-//   font-weight: 700;
-//   font-size: 48px;
-//   line-height: 60px;
-//   margin-bottom: 20px;
-//   text-transform: uppercase;
-// }
-
-// .about .content h3 {
-//   font-weight: 500;
-//   line-height: 32px;
-//   font-size: 24px;
-// }
-
-// .about .content ul {
-//   list-style: none;
-//   padding: 0;
-// }
-
-// .about .content ul li {
-//   padding: 10px 0 0 28px;
-//   position: relative;
-// }
-
-// .about .content ul i {
-//   left: 0;
-//   top: 12px;
-//   position: absolute;
-//   font-size: 20px;
-//   color: #F4C200;
-// }
-
-// .about .content p:last-child {
-//   margin-bottom: 0;
-// }
-
-// /*--------------------------------------------------------------
-// # Footer
-// --------------------------------------------------------------*/
-// #footer {
-//   background: rgba(19, 19, 19, 0.4);
-//   padding: 30px 0;
-//   color: #fff;
-//   font-size: 14px;
-//   position: relative;
-// }
-
-// #footer .copyright {
-//   text-align: center;
-// }
-
-// #footer .credits {
-//   padding-top: 10px;
-//   text-align: center;
-//   font-size: 13px;
-//   color: #fff;
-// }
-
-// #footer .credits a {
-//   color: #ff3333;
-// }
-
-// video {
-//   max-width: 100%;
-//   height: auto;
-//   border-radius: 10px;
-// }
-
-// @media (max-width: 768px) {
-//   .promo-video {
-//     font-size: 20px;
-//   }
-// }
-
-// // Tablas de Habitaciones
-
-// table {
-//   border-collapse: collapse;
-//   width: 100%;
-//   margin-bottom: 20px;
-// }
-// th, td {
-//   padding: 8px;
-//   text-align: center;
-//   border: 1px solid black;
-// }
-// th {
-//   background-color: #f2f2f2;
-//   font-weight: bold;
-// }
-// tr:nth-child(even) {
-//   background-color: #f2f2f2;
-// }
-// tr:hover {
-//   background-color: #ddd;
-// }
-
-
 .countdown-item {
   width: 3.5em;
   height: 3.5em;
-  border: 1px solid black;
+  border: 1px solid hotpink;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+}
+
+.hot-title {
+  color: hotPink;
+  text-shadow: 1px 1px black;
+  line-height: 0.6em
+  }
+
+h2 {
+  font-size: 4em;
+  margin-bottom: 0px;
+  margin-top: 1em;
+}
+
+td {
+  border: 1px solid hotpink;
+  padding: 0.5em;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  padding: 3em 0em
+}
+
+section > * {
+  padding: 0em 2em;
+}
+
+@media only screen and (max-width: 600px) {
+  section {
+    grid-template-columns: 1fr ;
+  }
 }

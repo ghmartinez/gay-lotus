@@ -8,11 +8,11 @@
                   label: "Email",
                   required: false,
                   autofocus: true,
-                  input_html: { autocomplete: "email", placeholder: "lady@gaga.com" } %>
+                  input_html: { autocomplete: "email" } %>
       <%= f.input :password,
                   label: "Contrasenya",
                   required: false,
-                  input_html: { autocomplete: "current-password", placeholder: "Gangbang69!" } %>
+                  input_html: { autocomplete: "current-password" } %>
       <%= f.input :remember_me,
                   label: "Recorda'm",
                   as: :boolean if devise_mapping.rememberable? %>

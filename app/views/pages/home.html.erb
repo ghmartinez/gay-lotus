@@ -1,51 +1,3 @@
-<style>
-  .hot-title {
-    color: hotPink;
-  text-shadow: 1px 1px black;
-  line-height: 0.6em
-  }
-
-  h2 {
-    font-size: 4em;
-    margin-bottom: 0px;
-    margin-top: 1em;
-  }
-
-</style>
-
-<style>
-  td {
-    border: 1px solid hotpink;
-    padding: 0.5em;
-  }
-</style>
-
-<style>
-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr ;
-  padding: 3em 0em
-}
-section > * {
-  padding: 0em 2em;
-}
-
-
-
-@media only screen and (max-width: 600px) {
-  section {
-    grid-template-columns: 1fr ;
-  }
-}
-
-</style>
-
-<style>
-a {
-  color: hotpink
-}
-</style>
-
 <div class="home-bg">
 
   <!-- ======= Header ======= -->
@@ -57,27 +9,25 @@ a {
       <p class="centered-text" style="margin-top: 2em" >
       Comença el compte enrere... tic... toc...</p>
       <br>
-      <div class="countdown d-flex justify-content-center" data-count="2023/05/19">
-
-      <img src="https://64.media.tumblr.com/9e39c944f4f177510b5366d08263c7d1/tumblr_nfvwf32DPI1qcwgxao1_500.gif" style="height: 7em"alt="">
-        <div>
-          <p class="countdown-item">%d</p>
-          <p style = "text-align: center">Dies</p>
-        </div>
-        <div>
-          <p class="countdown-item">%h</p>
-          <p style = "text-align: center">Hores</p>
-        </div>
-        <div>
-          <p class="countdown-item">%m</p>
-          <p style = "text-align: center">Minuts</p>
-        </div>
-        <div>
-          <p class="countdown-item">%s</p>
-          <p style = "text-align: center">Segons</p>
-        </div>
-      <img src="https://64.media.tumblr.com/9e39c944f4f177510b5366d08263c7d1/tumblr_nfvwf32DPI1qcwgxao1_500.gif" style="height: 7em"alt="">
-
+      <div mb-5 data-controller="countdown" class="countdown d-flex justify-content-center" data-count="2023-05-19T14:00:00.000Z" data-countdown-target="countdown">
+        <img src="https://64.media.tumblr.com/9e39c944f4f177510b5366d08263c7d1/tumblr_nfvwf32DPI1qcwgxao1_500.gif" style="height: 7em"alt="">
+          <div>
+            <p class="countdown-item hot-title">%d</p>
+            <p style = "text-align: center; font-size: 12px">dies</p>
+          </div>
+          <div>
+            <p class="countdown-item hot-title">%h</p>
+            <p style = "text-align: center; font-size: 12px">hores</p>
+          </div>
+          <div>
+            <p class="countdown-item hot-title">%m</p>
+            <p style = "text-align: center; font-size: 12px">minuts</p>
+          </div>
+          <div>
+            <p class="countdown-item hot-title">%s</p>
+            <p style = "text-align: center; font-size: 12px">segons</p>
+          </div>
+        <img src="https://64.media.tumblr.com/9e39c944f4f177510b5366d08263c7d1/tumblr_nfvwf32DPI1qcwgxao1_500.gif" style="height: 7em"alt="">
       </div>
 
       <p class="centered-text">Permeteu-nos que us allotgem al camping més luxós (o luxuriós... 😏). Esteu preparades per sobreviure al nostre càmping? 😱</p>
@@ -91,45 +41,34 @@ a {
     <!-- ======= About Us Section ======= -->
     <section>
       <div class="paragraph">
-        <h2 class="fancy-font hot-title centered-text">Estimades hostes,</h2>
-        <p>És un honor i un privilegi per a nosaltres donar-vos la benvinguda al nostre càmping de luxe. Com a part
-          del nostre compromís de brindar experiències excepcionals i d'alta qualitat, us hem seleccionat a
-          vosaltres com els nostres hostes més selectes per gaudir d'un cap de setmana espectacular.
-        Esperem que la vostra estada amb nosaltres sigui única i memorable. El nostre equip està compromès a
-          garantir-ne la satisfacció en tot moment.
-        Durant la seva estada, podran gaudir de les millors instal·lacions i serveis que oferim, des dels
-          nostres luxosos bungalous, fins a les nostres exquisites activitats (aviat tindreu disponible el
-          programa). Tot això envoltat d´un entorn natural impressionant i una atmosfera relaxada, segura i
-          inclusiva.
-        Ens enorgulleix haver estat escollides com a destinació de càmping de luxe i esperem que la seva estada
-          amb nosaltres sigui una experiència inoblidable.
-        Atentament, <br>
-        <span style="text-decoration: hotpink wavy underline">L'equip del Camping Gay Lotus</span></p>
+        <h2 class="fancy-font hot-title centered-text mb-3">Estimades hostes,</h2>
+        <p>És un honor i un privilegi per a nosaltres donar-vos la benvinguda al nostre càmping de luxe.</p>
+        <p>Esperem que la vostra estada amb nosaltres sigui única i memorable. El nostre equip està compromès a garantir-ne la satisfacció en tot moment.</p>
+        <p>Durant la seva estada, podran gaudir de les millors instal·lacions i serveis que oferim, des dels nostres luxosos bungalous, fins a les nostres exquisites activitats (descarrega el programa). Tot això envoltat d'un entorn natural impressionant i una atmosfera relaxada, segura i inclusiva.</p>
+        <p>Ens enorgulleix haver estat escollides com a destinació de càmping de luxe i esperem que la seva estada amb nosaltres sigui una experiència inoblidable.</p>
+        <p>Atentament,</p>
+        <p style="text-decoration: hotpink wavy underline">L'equip del Camping Gay Lotus. 🪷</p>
+        <br>
       </div>
 
       <div class="paragraph">
-        <h2 class="fancy-font hot-title centered-text">These gays are trying to murder me!!!</h2>
-        <p style="font-style: italic">
-          Tenim un problema:
-          La nostra respectada directora del càmping, Valentina, ens ha informat que totes les nostres hostes són una mica... soltes. Pretenen ser amables i properes, però no ho fan pel plaer de construir una comunitat... sinó pels "papers". Des de l'equip de direcció del Camping Gay Lotus 🪷 no volem donar gaires més detalls (de moment...), però compte amb qui compartiu informació o us deixeu portar... Podeu perdre la vostra fortuna i deixar-la en mans d'una altre persona. Esperem que no sigui un inconvenient molt gran per a la vostra estada. Us mantindrem informats de les novetats.
-          Gràcies per entendre-ho,
-          L'equip del Camping Gay Lotus. 🪷
-        </p>
+        <h2 class="fancy-font hot-title centered-text mb-3">These gays are trying to murder me!</h2>
+        <p>Et proposem jugar al nostre joc favorit: <em>These gays are trying to murder me!</em></p>
+        <p>Quan arribis al càmping rebràs un preciós souvenir (un collaret amb el nostre logotip 🪷 embolicat en un codi QR).</p>
+        <p>Des del collaret, et registraràs a la nostra web i a una hora determinada de la nit del divendres, tindràs una missió assignada. Consistirà que hauràs d'aconseguir que una hoste en concret hagi de fer una cosa específica.</p>
+        <p>Si ho aconsegueixes, tens permís d'escanejar el QR i quedar-te amb la seva missió. Però! Ara totes dues esteu lluitant per fer la mateixa missió. La que la aconsegueixi complir abans, guanya i continua jugant. La que perdi de totes dues... mor. 😱</p>
       </div>
     </section><!-- End About Us Section -->
 
 
 <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
 <br>
+
   <!-- ======= Habitaciones Section ======= -->
   <section>
         <div class="paragraph">
           <h2  class="fancy-font hot-title centered-text">Els Nostres Bungalous,</h2>
-          <%# <img src="assets/img/tent.png" alt="tienda de campaña" style="max-width: 100%; height: auto;" class="mb-4"> %>
             <p>Para facilitaros vuestra estancia os damos a elegir el bungaló y la habitación en la que os queráis hospedar. Simplemente tenéis que rellenar vuestro nombre y usuario de telegram en el bungaló y habitación de preferencia:</p>
-
-
-
             <table class="" style="width: fit-content; margin: auto; ">
               <thead>
                 <tr>

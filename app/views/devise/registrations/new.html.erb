@@ -9,29 +9,27 @@
     <%= f.input :email,
                 label: "Email",
                 required: true,
-                input_html: { autocomplete: "email", placeholder: "lady@gaga.com" }%>
+                input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 label: "Contrasenya",
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: (" Mínim #{@minimum_password_length} caràcters. Si us plau, no utilitzis una contrasenya habitual aquí." if @minimum_password_length),
                 input_html: { autocomplete: "new-password", placeholder: "Gangbang69!" } %>
     <%= f.input :password_confirmation,
                 label: "Confirma la contrasenya",
                 required: true,
-                input_html: { autocomplete: "new-password", placeholder: "Gangbang69!" } %>
+                input_html: { autocomplete: "new-password" } %>
     <%= f.input :first_name,
                 label: "Nom",
-                placeholder: "Lady",
                 required: true %>
     <%= f.input :last_name,
                 label: "Cognoms",
-                placeholder: "Gaga",
                 required: true %>
     <%= f.input :telegram_user,
-                label: "Usuari de Telegram",
-                placeholder: "@ladygaga69" %>
+                label: "Usuari de Telegram" %>
     <%= f.input :photo,
                 label: "Foto de perfil",
+                hint: "Si us plau, no posis una fotografia d'un paisatge. A les persones els costarà fer-ne més la missió si no et coneixen.",
                 as: :file %>
   </div>
 
