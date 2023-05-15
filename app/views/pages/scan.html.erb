@@ -3,7 +3,7 @@
   <h2 class="mt-3 fancy-font hot-title centered-text mb-3">Hola <%= current_user.first_name %>!</h2>
 
   <% if current_user.photo.attached? %>
-  <%= cl_image_tag @current_user.photo.key, class: "current-user-photo" %>
+  <%= cl_image_tag @current_user.photo.key, class: "current-user-photo text-center" %>
   <div class="container">
     <p style="font-size: 12px"><em>Cuida tu collar, reina. Si ves a alguien acercándose con su móvil a tu cuello, es
         para
@@ -18,7 +18,7 @@
   <% end %>
 
   <% if @new_mission %>
-  <p>¡Tienes una nueva misión!</p>
+  <h3 class="mt-3 fancy-font hot-title centered-text mb-3">¡Tienes una nueva misión!</h3>
   <%= @new_mission.challenge.description %>
   <p>hacia</p>
   <%= @new_mission.target_user.first_name %>
@@ -33,9 +33,15 @@
   <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
   <br>
 
-  <h5>Tu misión actual es:</h5>
-  <p><em><%= challenge %></em> </p>
-  <%= cl_image_tag current_user.missions.last.target_user.photo.key, class: "target-user-photo" %>
+  <h5 class="text-center">Tu misión actual es:</h5>
+  <div class="d-flex flex-row">
+    <div class="p-2">
+      <p><em><%= challenge %></em> </p>
+    </div>
+    <div class="p-2">
+      <%= cl_image_tag current_user.missions.last.target_user.photo.key, class: "target-user-photo" %>
+    </div>
+  </div>
 
   <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
   <br>
@@ -44,9 +50,8 @@
 
   <div class="container">
     <% current_user.missions.each_with_index do |mission, index| %>
-    <p><%= index + 1 %>. <i><%= mission.challenge.description %></i> hacia
-      <strong><%= mission.target_user.first_name %></strong></p>
-    <p>Estado: <strong><%= mission.status %></strong></p>
+    <p><%= index + 1 %>. <i><%= mission.challenge.description.gsub("target", full_name) %></i></p>
+    <p>Estado: <strong><%= mission.status == "pending" ? "Pendiente" : "Ganada" %></strong></p>
     <hr>
     <% end %>
   </div>
