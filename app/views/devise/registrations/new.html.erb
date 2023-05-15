@@ -14,7 +14,7 @@
                 label: "Contrasenya",
                 required: true,
                 hint: (" Mínim #{@minimum_password_length} caràcters. Si us plau, no utilitzis una contrasenya habitual aquí." if @minimum_password_length),
-                input_html: { autocomplete: "new-password", placeholder: "Gangbang69!" } %>
+                input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 label: "Confirma la contrasenya",
                 required: true,
