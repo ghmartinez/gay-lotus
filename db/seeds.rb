@@ -1,3 +1,8 @@
+Mission.destroy_all
+Bungalow.destroy_all
+User.destroy_all
+Challenge.destroy_all
+
 puts "Creating challenges..."
 challenges = [
   "Conseguir que target se haga una selfie contigo.",

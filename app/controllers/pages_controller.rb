@@ -26,27 +26,27 @@ class PagesController < ApplicationController
       current_user.update(qr: params[:qr])
 
     elsif current_user.qr == params[:qr]
-      @mensaje = "Ya has registrado tu propio QR, tonta."
+      @mensaje = "Ya has registrado tu propio QR, tonta. 😒"
 
     elsif current_user.qr != params[:qr] && params[:qr].present?
 
       @user = User.find_by(qr: params[:qr])
 
       if @user.nil?
-        @mensaje = "El QR que has escaneado no está asociado a ninguna usuaria, tonta."
+        @mensaje = "El QR que has escaneado no está asociado a ninguna usuaria, tonta. 😒"
 
       elsif current_user.missions.none? { |mission| mission.target_user.qr == params[:qr] }
-        @mensaje = "Esta misión no te toca, tonta."
+        @mensaje = "Esta misión no te toca, tonta. 😒"
 
       elsif current_user.missions.any? { |mission| mission.target_user.qr == params[:qr] && mission.status == "completed" }
-        @mensaje = "Ya has ganado esta misión, tonta."
+        @mensaje = "Ya has ganado esta misión, tonta. 😒"
 
       elsif @other_mission.present? && @other_mission.status == "completed"
-        @mensaje = "Que has perdido ya. Deja de molestar, tonta."
+        @mensaje = "Que has perdido ya. Deja de molestar, tonta. 😒"
 
       else
         current_user.missions.last.update(status: "completed", winner_user: current_user)
-        @mensaje = "Has completado la misión, reina!"
+        @mensaje = "Has completado la misión, reina! 💁‍♀️"
 
         @mission = Mission.find_by(user: @user)
         @new_mission = @mission.dup
