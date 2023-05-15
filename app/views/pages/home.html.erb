@@ -1,3 +1,5 @@
+<%= audio_tag 'intro.mp3', autoplay: true, loop: true %>
+
 <div class="home-bg">
 
   <!-- ======= Header ======= -->
@@ -44,10 +46,10 @@
         <h2 class="fancy-font hot-title centered-text mb-3">Estimades hostes,</h2>
         <p>És un honor i un privilegi per a nosaltres donar-vos la benvinguda al nostre càmping de luxe.</p>
         <p>Esperem que la vostra estada amb nosaltres sigui única i memorable. El nostre equip està compromès a garantir-ne la satisfacció en tot moment.</p>
-        <p>Durant la seva estada, podran gaudir de les millors instal·lacions i serveis que oferim, des dels nostres luxosos bungalous, fins a les nostres exquisites activitats (descarrega el programa). Tot això envoltat d'un entorn natural impressionant i una atmosfera relaxada, segura i inclusiva.</p>
+        <p>Durant la seva estada, podran gaudir de les millors instal·lacions i serveis que oferim, des dels nostres luxosos bungalous, fins a les nostres exquisites activitats (<a href="<%= asset_path('programa_gay_lotus.pdf') %>" target="_blank">descarrega el programa</a>). Tot això envoltat d'un entorn natural impressionant i una atmosfera relaxada, segura i inclusiva.</p>
         <p>Ens enorgulleix haver estat escollides com a destinació de càmping de luxe i esperem que la seva estada amb nosaltres sigui una experiència inoblidable.</p>
         <p>Atentament,</p>
-        <p style="text-decoration: hotpink wavy underline">L'equip del Camping Gay Lotus. 🪷</p>
+        <p style="text-decoration: hotpink wavy underline"><strong>L'equip del Camping Gay Lotus. 🪷</strong></p>
         <br>
       </div>
 
@@ -57,6 +59,7 @@
         <p>Quan arribis al càmping rebràs un preciós souvenir (un collaret amb el nostre logotip 🪷 embolicat en un codi QR).</p>
         <p>Des del collaret, et registraràs a la nostra web i a una hora determinada de la nit del divendres, tindràs una missió assignada. Consistirà que hauràs d'aconseguir que una hoste en concret hagi de fer una cosa específica.</p>
         <p>Si ho aconsegueixes, tens permís d'escanejar el QR i quedar-te amb la seva missió. Però! Ara totes dues esteu lluitant per fer la mateixa missió. La que la aconsegueixi complir abans, guanya i continua jugant. La que perdi de totes dues... mor. 😱</p>
+        <p><em>Evidentment, la que més missions guanyi, s'emporta un premi que serà donat al NO Talent Show.</em></p>
       </div>
     </section><!-- End About Us Section -->
 
@@ -66,75 +69,34 @@
 
   <!-- ======= Habitaciones Section ======= -->
   <section>
-        <div class="paragraph">
-          <h2  class="fancy-font hot-title centered-text">Els Nostres Bungalous,</h2>
-            <p>Para facilitaros vuestra estancia os damos a elegir el bungaló y la habitación en la que os queráis hospedar. Simplemente tenéis que rellenar vuestro nombre y usuario de telegram en el bungaló y habitación de preferencia:</p>
-            <table class="" style="width: fit-content; margin: auto; ">
-              <thead>
-                <tr>
-                  <th colspan="3">Las Monitoras</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr contenteditable="true">
-                  <td>fila 1, columna 1</td>
-                  <td>fila 1, columna 2</td>
-                  <td>fila 1, columna 3</td>
-                </tr>
-                <tr contenteditable="true">
-                  <td>fila 2, columna 1</td>
-                  <td>fila 2, columna 2</td>
-                  <td>fila 2, columna 3</td>
-                </tr>
-                <tr contenteditable="true">
-                  <td>fila 3, columna 1</td>
-                  <td>fila 3, columna 2</td>
-                  <td>fila 3, columna 3</td>
-                </tr>
-                <tr contenteditable="true">
-                  <td>fila 4, columna 1</td>
-                  <td>fila 4, columna 2</td>
-                  <td>fila 4, columna 3</td>
-                </tr>
-                <tr contenteditable="true">
-                  <td>fila 5, columna 1</td>
-                  <td>fila 5, columna 2</td>
-                  <td>fila 5, columna 3</td>
-                </tr>
-                <tr contenteditable="true">
-                  <td>fila 6, columna 1</td>
-                  <td>fila 6, columna 2</td>
-                  <td>fila 6, columna 3</td>
-                </tr>
-              </tbody>
-            </table>
+    <div class="paragraph">
+      <h2  class="fancy-font hot-title centered-text mb-3">El Camping,</h2>
+      <p>El càmping està situat a la <strong>C-31, km 186,2, 08850, Barcelona</strong>.</p>
+      <p>És molt fàcil arribar des de Barcelona amb la línia de busos <a href="https://barcelona.avanzagrupo.com/lineas-y-horarios/todas-las-lineas/linea-l94" target="_blank">L94</a> i <a href="https://barcelona.avanzagrupo.com/lineas-y-horarios/todas-las-lineas/linea-l95" target="_blank">L95</a>. Als boomers us recomanem consultar els horaris a la web de l'Àrea Metropolitana de Barcelona i als millenials que us descarregueu Google Maps.</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.67549369491!2d2.040164876597469!3d41.2724009713148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49d8dfa014df7%3A0x94378116878ca82a!2sCamping%20tres%20estrellas%20Barcelona!5e0!3m2!1ses!2ses!4v1684158555952!5m2!1ses!2ses" width="100%" height="400" style="border: 2px solid hotpink;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p>Us podeu fer el viatge més amè escoltant música. Nosaltres us recomanem aquesta obra d'art:</p>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5UsRZKlfGJV8jSaPrvFEUH?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <br>
+      <br>
+      <br>
+    </div>
 
-          </div>
-
-          <div class="paragraph">
-            <h2 class="fancy-font hot-title centered-text">Però tenim un problema,</h2>
-            <div class="centered-text">
-            <iframe style="" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRLkSjRRl76Bh38yadmdeo94YiPoF6bj2f9MxC3eyEJxZAQIV9M3IxG5mdVlWoP_zKuNx5BTSQhsBds/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-            </div>
-            <p>La nostra respectada directora del càmping, Valentina, ens ha informat que totes les nostres hostes són
-              una mica... soltes.
-              Pretenen ser amables i properes, però no ho fan pel plaer de construir una comunitat... sinó pels
-              "papers"...
-              Des de la direcció del Camping Gay Lotus 🪷 no volem donar gaires més detalls (de moment...), però ves
-              amb compte amb qui compartiu informació o us deixeu portar... Podeu perdre la vostra fortuna i deixar-la
-              en mans d'una fúrcia. 😱😱😱</p>
-          </div>
-        </div>
-
-      </div>
+    <div class="paragraph">
+      <h2 class="fancy-font hot-title centered-text mb-3">Agraïments,</h2>
+      <p>Estimats amics i amigues,</p>
+      <p>Com a director/a del Gay Lotus, vull tornar a agrair a totes les persones que han col·laborat en la creació de l'esdeveniment Camping Gay Lotus i als nostres hostes per ser part d'aquesta experiència inoblidable. Però també vull destacar la importància de continuar fent créixer la nostra comunitat i fomentant espais segurs, diversos i inclusius.</p>
+      <p>A Gay Lotus, creiem fermament que cada persona mereix ser respectada i valorada per qui són, sense importar la seva orientació sexual, identitat de gènere, raça, religió o origen ètnic. És per això que ens esforcem per crear un ambient acollidor, on tots se sentin còmodes i segurs per expressar-se tal com són.</p>
+      <p>Però també sabem que hi ha molta feina per fer per assegurar-nos que la nostra comunitat segueixi creixent i prosperant. Per això volem continuar fomentant espais inclusius i diversos, on totes les persones se sentin benvingudes i representades. Volem continuar promovent el diàleg i l'educació, perquè puguem aprendre de les nostres diferències i créixer junts com a comunitat.</p>
+      <p>En resum, volem continuar construint una comunitat inclusiva, diversa i segura, on totes les persones se sentin valorades i respectades. I sabem que podem comptar amb tots vosaltres per fer-ho possible.</p>
+      <p>Gràcies de nou per ser part de la comunitat de Gay Lotus, i esperem seguir veient-nos en el futur per seguir fomentant espais segurs, diversos i inclusius per a tothom.</p>
+    </div>
     </section><!-- End About Us Section -->
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" style="background-color: white">
-        &copy; Copyright <strong><span>Camping Gay Lotus</span></strong>. Tots els drets reservats
-        Dissenyat amb ❤️ per <a href="https://gabrielmr.com/">Gabriel</a> i <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        &copy; Copyright <strong><span>Gay Lotus</span></strong>. Tots els drets reservats. Dissenyat amb ❤️ per <a href="https://gabrielmr.com/">Gabriel</a>.
   </footer><!-- End #footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
