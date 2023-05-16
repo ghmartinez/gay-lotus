@@ -12,11 +12,12 @@ class PagesController < ApplicationController
     target_user = User.all.sample
     User.all.each do |user|
       while Mission.all.any? { |mission| mission.target_user == target_user }
+        break if target_user == user
         target_user = User.where.not(id: user.id).sample
       end
       Mission.create(user: user, challenge: Challenge.all.sample, target_user: target_user, status: "pending")
     end
-    redirect_to root_path
+    redirect_to admin_path
   end
 
   def scan
