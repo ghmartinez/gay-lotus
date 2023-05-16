@@ -1,1 +1,6 @@
 <%= button_to "Execute seeds", add_missions_to_users_path, method: :post %>
+
+<% Mission.all.each_with_index do |mission, index| %>
+  <p><%= index + 1 %>. Misión de <%= mission.user.first_name %> <%= mission.user.last_name %> a <%= mission.target_user.first_name %> <%= mission.target_user.last_name %>.</p>
+  <hr>
+<% end %>
