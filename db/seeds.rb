@@ -58,21 +58,3 @@ challenges.each do |challenge|
   Challenge.create(description: challenge)
 end
 puts "Challenges created!"
-
-require "open-uri"
-require 'faker'
-
-puts "Creating users..."
-70.times do
-  user = User.new(
-    email: Faker::Internet.email,
-    password: "123456",
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    photo: "https://source.unsplash.com/featured/?face"
-  )
-  file = URI.open("https://source.unsplash.com/featured/?face")
-  user.photo.attach(io: file, filename: "profile.png", content_type: "image/png")
-  user.save!
-end
-puts "Users created!"

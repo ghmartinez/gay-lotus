@@ -3,72 +3,96 @@
   <h2 class="mt-3 fancy-font hot-title centered-text mb-3">Hola <%= current_user.first_name %>!</h2>
 
   <% if current_user.photo.attached? %>
-  <%= cl_image_tag @current_user.photo.key, class: "current-user-photo text-center" %>
-  <div class="container">
-    <p style="font-size: 12px"><em>Cuida tu collar, reina. Si ves a alguien acercándose con su móvil a tu cuello, es
-        para
-        robarte tu misión. No le dejes!</em></p>
-  </div>
+    <%= cl_image_tag @current_user.photo.key, class: "current-user-photo text-center" %>
+    <div class="container">
+      <p style="font-size: 12px"><em>Cuida tu collar, reina. Si ves a alguien acercándose con su móvil a tu cuello, es
+          para
+          robarte tu misión. No le dejes!</em></p>
+    </div>
   <% end %>
 
   <% if @mensaje %>
-  <div class="alert alert-primary" role="alert">
-    <%= @mensaje %>
-  </div>
-  <% end %>
-
-  <% if @new_mission %>
-  <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
-  <h3 class="mt-3 fancy-font hot-title centered-text mb-3">¡Tienes una nueva misión!</h3>
-  <% challenge = @new_mission.challenge.description %>
-  <% full_name = @new_mission.target_user.first_name + " " + @new_mision.target_user.last_name %>
-  <% challenge.gsub!("target", full_name) %>
-  <% end %>
-
-  <% if @user_mission.present? %>
-
-  <% challenge = current_user.missions.last.challenge.description %>
-  <% full_name = current_user.missions.last.target_user.first_name + " " + current_user.missions.last.target_user.last_name%>
-  <% challenge.gsub!("target", full_name) %>
-
-  <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
-  <br>
-
-  <h5 class="text-center">Tu misión actual es:</h5>
-  <div class="d-flex flex-row">
-    <div class="p-2">
-      <p><em><%= challenge %></em> </p>
+    <div class="alert alert-primary" role="alert">
+      <%= @mensaje %>
     </div>
-    <div class="p-2">
-      <%= cl_image_tag current_user.missions.last.target_user.photo.key, class: "target-user-photo" %>
-    </div>
-  </div>
-
-  <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
-  <br>
-
-  <p>Todas mis misiones:</p>
-
-  <div class="container">
-    <% current_user.missions.each_with_index do |mission, index| %>
-    <p><%= index + 1 %>. <i><%= mission.challenge.description.gsub("target", full_name) %></i></p>
-    <p>Estado: <strong><%= mission.status == "pending" ? "Pendiente" : "Ganada" %></strong></p>
-    <hr>
-    <% end %>
-  </div>
-
-  <% if @other_mission.present? and @other_mission.status == "completed" %>
-  <p>¡Has perdido!</p>
   <% end %>
+
+  <% if @other_mission.present? && @other_mission.status == "completed" %>
+    <p>¡Has perdido!</p>
+
+  <%# Cuando hay una nueva misión, sale un cartel de cuál es la nueva misión, pero debería verse sin el div que muestra la misión actual. %>
+  <% elsif @new_mission && @user_mission.present? %>
+    <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
+    <h2 class="mt-3 fancy-font hot-title centered-text mb-3">¡Tienes una nueva misión!</h2>
+
+    <% challenge = @new_mission.challenge.description %>
+    <% full_name = @new_mission.target_user.first_name + " " + @new_mission.target_user.last_name %>
+    <% challenge.gsub!("target", full_name) %>
+
+    <div class="d-flex flex-row">
+      <div class="p-2">
+        <p><em><%= challenge %></em> </p>
+      </div>
+      <div class="p-2">
+        <%= cl_image_tag @new_mission.target_user.photo.key, class: "target-user-photo" %>
+      </div>
+    </div>
+
+    <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
+    <br>
+
+    <p>Todas mis misiones:</p>
+
+    <div class="container">
+      <% current_user.missions.each_with_index do |mission, index| %>
+      <p><%= index + 1 %>. <i><%= mission.challenge.description.gsub("target", full_name) %></i></p>
+      <p>Estado: <strong><%= mission.status == "pending" ? "Pendiente" : "Ganada" %></strong></p>
+      <hr>
+      <% end %>
+    </div>
+
+  <%# Cuando ya están asignadas las misiones, los usuarios deben ver cuál es su misión actual. %>
+  <% elsif @user_mission.present? %>
+
+    <% challenge = current_user.missions.last.challenge.description %>
+    <% full_name = current_user.missions.last.target_user.first_name + " " + current_user.missions.last.target_user.last_name %>
+    <% challenge.gsub!("target", full_name) %>
+
+    <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
+    <br>
+
+    <h5 class="text-center">Tu misión actual es:</h5>
+    <div class="d-flex flex-row">
+      <div class="p-2">
+        <p><em><%= challenge %></em> </p>
+      </div>
+      <div class="p-2">
+        <%= cl_image_tag current_user.missions.last.target_user.photo.key, class: "target-user-photo" %>
+      </div>
+    </div>
+
+    <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
+    <br>
+
+    <p>Todas mis misiones:</p>
+
+    <%# Aquí tengo que coger la variable full_name y asignarla correctamente en la iteración %>
+    <div class="container">
+      <% current_user.missions.each_with_index do |mission, index| %>
+      <p><%= index + 1 %>. <i><%= mission.challenge.description.gsub("target", full_name) %></i></p>
+      <p>Estado: <strong><%= mission.status == "pending" ? "Pendiente" : "Ganada" %></strong></p>
+      <hr>
+      <% end %>
+    </div>
 
   <% else %>
-  <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
-  <br>
-  <h4>Todavía no hay ninguna misión. A la noche del viernes, cuando todas nuestras huéspedes se hayan registrado... te tocará tu
-    misión. 😱🔫</h4>
-  <br>
-  <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
-
+    <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
+    <br>
+    <h4>Todavía no hay ninguna misión. A la noche del viernes, cuando todas nuestras huéspedes se hayan registrado... te
+      tocará tu
+      misión. 😱🔫</h4>
+    <br>
+    <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
   <% end %>
 
   <br>
@@ -82,7 +106,6 @@
   <br>
   <hr style="border: 1px solid hotpink; width: 95vw; margin: auto;">
   <br>
-
 </div>
 
 <!-- ======= Footer ======= -->
