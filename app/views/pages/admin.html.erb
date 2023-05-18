@@ -12,7 +12,7 @@
 
 <h1>Usuarios (total: <%= User.count %>)</h1>
 <% User.all.each_with_index do |user, index| %>
-  <p><%= index + 1 %>. <%= user.first_name %> <%= user.last_name %> (<%= user.email %>).</p>
+  <p><%= index + 1 %>. <%= user.first_name %> <%= user.last_name %> (<%= user.email %>). <span style="color: red"><%= "No tiene QR!" unless user.qr %></span></p>
 <% end %>
 
 </div>
