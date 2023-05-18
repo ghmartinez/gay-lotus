@@ -1,1 +1,18 @@
-<%= button_to "Execute seeds", add_missions_to_users_path, method: :post %>
+<div class="container">
+
+<%= button_to "Añadir Misiones a Usuarios", add_missions_to_users_path, method: :post %>
+<br>
+
+<h1>Misiones (total: <%= Mission.count %>)</h1>
+<% Mission.all.each_with_index do |mission, index| %>
+  <p><%= index + 1 %>. Misión de <strong><%= mission.user.first_name %> <%= mission.user.last_name %></strong> hacia <strong><%= mission.target_user.first_name %> <%= mission.target_user.last_name %></strong>.</p>
+  <% if mission.user == mission.target_user %> <p style="color: red"><strong>¡Misión suicida!</strong></p> <% end %>
+  <hr>
+<% end %>
+
+<h1>Usuarios (total: <%= User.count %>)</h1>
+<% User.all.each_with_index do |user, index| %>
+  <p><%= index + 1 %>. <%= user.first_name %> <%= user.last_name %> (<%= user.email %>).</p>
+<% end %>
+
+</div>

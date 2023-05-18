@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   end
 
   def add_missions_to_users
+    Mission.destroy_all
     target_user = User.all.sample
     User.all.each do |user|
       while Mission.all.any? { |mission| mission.target_user == target_user }
@@ -15,7 +16,7 @@ class PagesController < ApplicationController
       end
       Mission.create(user: user, challenge: Challenge.all.sample, target_user: target_user, status: "pending")
     end
-    redirect_to root_path
+    redirect_to admin_path
   end
 
   def scan
