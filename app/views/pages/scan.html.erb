@@ -18,7 +18,12 @@
   <% end %>
 
   <% if @other_mission.present? && @other_mission.status == "completed" %>
-    <p>¡Has perdido!</p>
+    <h2 style="color: red" class="mt-5 fancy-font hot-title centered-text mb-5">¡Cari! ¡Has perdido!</h2>
+    <p>Tu rival te ha ganado y ha escaneado la que era tu misión. Ya no tienes nada que hacer. 😔</p>
+    <p>Esperamos que hayas disfrutado del juego. Lo hemos hecho con mucho amor. ❤️</p>
+    <p>¡Nos vemos en la fiesta!</p>
+    <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
+    <br>
 
   <%# Cuando hay una nueva misión, sale un cartel de cuál es la nueva misión, pero debería verse sin el div que muestra la misión actual. %>
   <% elsif @new_mission && @user_mission.present? %>
@@ -41,12 +46,20 @@
     <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
     <br>
 
-    <p>Todas mis misiones:</p>
+    <h3 class="hot-title mb-3">Todas mis misiones:</h3>
 
     <div class="container">
       <% current_user.missions.each_with_index do |mission, index| %>
-      <p><%= index + 1 %>. <i><%= mission.challenge.description.gsub("target", full_name) %></i></p>
-      <p>Estado: <strong><%= mission.status == "pending" ? "Pendiente" : "Ganada" %></strong></p>
+      <% the_name = mission.target_user.first_name + " " + mission.target_user.last_name %>
+      <div class="d-flex flex-row">
+        <div class="p-2">
+          <p><%= index + 1 %>. <i><%= mission.challenge.description.gsub("target", the_name) %></i></p>
+          <p>Estado: <strong><%= mission.status == "pending" ? "Pendiente" : "Ganada" %></strong></p>
+        </div>
+        <div class="p-2">
+          <%= cl_image_tag mission.target_user.photo.key, class: "target-user-photo" %>
+        </div>
+      </div>
       <hr>
       <% end %>
     </div>
@@ -61,7 +74,7 @@
     <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
     <br>
 
-    <h5 class="text-center">Tu misión actual es:</h5>
+    <h3 class="text-center hot-title">Tu misión actual es:</h3>
     <div class="d-flex flex-row">
       <div class="p-2">
         <p><em><%= challenge %></em> </p>
@@ -74,13 +87,21 @@
     <hr style="border: 2px solid hotpink; width: 80vw; margin: auto;">
     <br>
 
-    <p>Todas mis misiones:</p>
+    <h3 class="hot-title mb-3">Todas mis misiones:</h3>
 
     <%# Aquí tengo que coger la variable full_name y asignarla correctamente en la iteración %>
     <div class="container">
       <% current_user.missions.each_with_index do |mission, index| %>
-      <p><%= index + 1 %>. <i><%= mission.challenge.description.gsub("target", full_name) %></i></p>
-      <p>Estado: <strong><%= mission.status == "pending" ? "Pendiente" : "Ganada" %></strong></p>
+      <% the_name = mission.target_user.first_name + " " + mission.target_user.last_name %>
+      <div class="d-flex flex-row">
+        <div class="p-2">
+          <p><%= index + 1 %>. <i><%= mission.challenge.description.gsub("target", the_name) %></i></p>
+          <p>Estado: <strong><%= mission.status == "pending" ? "Pendiente" : "Ganada" %></strong></p>
+        </div>
+        <div class="p-2">
+          <%= cl_image_tag mission.target_user.photo.key, class: "target-user-photo" %>
+        </div>
+      </div>
       <hr>
       <% end %>
     </div>
